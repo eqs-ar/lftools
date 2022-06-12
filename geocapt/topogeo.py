@@ -17,8 +17,11 @@ __copyright__ = '(C) 2021, Leandro França'
 from numpy import radians, arctan, pi, sin, cos, matrix, sqrt, degrees, array, diag, ones, zeros, floor
 from numpy.linalg import norm, pinv, inv
 
+# Rumbo o azimut geografico es el aungulo con respecto al norte geografico
+# sin tener en cuenta la desviación el norte magnético
 def azimute(A,B):
-    # Cálculo dos Azimutes entre dois pontos (Vetor AB origem A extremidade B)
+    # Cálculo de Azimut o rumbo del punto A dirigido al punto B 
+    # (Angulo Vetor AB origen en A extremo B)
     if ((B.x()-A.x())>=0 and (B.y()-A.y())>0): #1º quadrante
         AzAB=arctan((B.x()-A.x())/(B.y()-A.y()))
         AzBA=AzAB+pi
